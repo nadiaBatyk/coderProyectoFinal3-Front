@@ -1,1 +1,19 @@
-<p>register works!</p>
+<div class="container mt-5 w-75 bg-color p-5">
+  <h1>Registro de Usuario</h1>
+  <form action="/registro" method="post">
+    <div class="mb-3 w-50">
+      <label for="nombre" class="form-label">Indica el mail de tu cuenta</label>
+      <input type="email" class="form-control" name="email" />
+    </div>
+    <div class="mb-3 w-50">
+      <label for="nombre" class="form-label">Elegí una contraseña</label>
+      <input type="password" class="form-control" name="password" />
+    </div>
+    <button type="submit" class="btn btn-primary" id="botonAgregar">
+      Crear cuenta
+    </button>
+  </form>
+  <button class="btn btn-secondary" onclick="location.href='/'">
+    Volver al Login
+  </button>
+</div>

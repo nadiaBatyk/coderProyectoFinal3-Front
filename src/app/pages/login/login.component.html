@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="container mt-5 w-75 bg-color p-5">
+  <h1>Login de Usuario</h1>
+  <form action="/login" method="post">
+    <div class="mb-3 w-50">
+      <label for="nombre" class="form-label">Ingresá tu mail</label>
+      <input type="email" class="form-control" name="email" />
+    </div>
+    <div class="mb-3 w-50">
+      <label for="nombre" class="form-label">Ingresá tu contraseña</label>
+      <input type="password" class="form-control" name="password" />
+    </div>
+    <button type="submit" class="btn btn-primary" id="botonAgregar">
+      Iniciar Sesión
+    </button>
+  </form>
+  <h2>Nuevo Usuario?</h2>
+  <button class="btn btn-success" onclick="location.href='/registro'">
+    Registrate Acá!
+  </button>
+</div>
