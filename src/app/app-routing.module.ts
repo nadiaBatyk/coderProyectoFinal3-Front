@@ -25,7 +25,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () =>
-      import('./core/core.module').then((m) => m.CoreModule),
+      import('./app.module').then((m) => m.AppModule),
   },
   {
     path: '',
