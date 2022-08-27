@@ -11,7 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     CommonModule
   ],exports:[
-    ProductCardComponent, MenuComponent
+    ProductCardComponent, MenuComponent,NavbarComponent
   ]
 })
 export class SharedModule { }

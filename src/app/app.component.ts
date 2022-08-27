@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from './core/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AppComponent {
   title = 'entregaFinalCoder3';
   
-  constructor(){
+  constructor(private authService:AuthService){
     
     
   }
