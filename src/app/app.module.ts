@@ -9,15 +9,18 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { DashboardComponent } from './core/dashboard/dashboard.component';
+import { CoreModule } from './core/core.module';
 @NgModule({
   declarations: [
     AppComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
+    
     HttpClientModule,
     
     ReactiveFormsModule
