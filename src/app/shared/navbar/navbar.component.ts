@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/core/models/user';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class NavbarComponent implements OnInit {
   @Input() user!:User;
   constructor() { }
 

@@ -1,0 +1,25 @@
+<ul class="navbar-nav" *ngIf="user;else visitorNav">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="/products"
+      >Productos</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/cart">Carrito</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/account">Mi cuenta</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/logout">Salir</a>
+  </li>
+</ul>
+<ng-template #visitorNav>
+    <ul class="navbar-nav" >
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </ul>
+</ng-template>
+

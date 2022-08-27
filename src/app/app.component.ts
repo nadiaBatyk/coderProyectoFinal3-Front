@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'entregaFinalCoder3';
-  showMenu:boolean=true;
+  
   constructor(){
     
     
