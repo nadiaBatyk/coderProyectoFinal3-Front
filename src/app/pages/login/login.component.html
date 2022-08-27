@@ -1,15 +1,15 @@
 <div class="container mt-5 w-50 bg-color p-5">
   <h1>Login de Usuario</h1>
-  <form >
+  <form [formGroup]="form">
     <div class="mb-3 ">
       <label for="nombre" class="form-label">Ingresá tu mail</label>
-      <input type="email" class="form-control" name="email" />
+      <input type="email" class="form-control" name="email" formControlName="email" />
     </div>
     <div class="mb-3 ">
       <label for="nombre" class="form-label">Ingresá tu contraseña</label>
-      <input type="password" class="form-control" name="password" />
+      <input type="password" class="form-control" name="password" formControlName="password" />
     </div>
-    <button type="submit" class="btn btn-primary" id="botonAgregar">
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="logUser()">
       Iniciar Sesión
     </button>
   </form>

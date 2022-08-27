@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   voidUser: User = {
-    name: '',
+    password: '',
     token: '',
     email: '',
   };
