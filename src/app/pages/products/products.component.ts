@@ -8,15 +8,11 @@ import { ProductsService } from 'src/app/core/services/products.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  products: Array<Product> = [
-    {
-      name: 'Pizza',
-      price: 1800,
-      image:
-        'https://cdn3.iconfinder.com/data/icons/street-food-and-food-trucker-1/64/pizza-fast-food-bake-bread-256.png',
-    },
-  ];
+  products: Array<Product>;
   constructor(private productsService: ProductsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productsService.getProducts();
+    this.productsService.products$.subscribe((res) => (this.products = res));
+  }
 }
