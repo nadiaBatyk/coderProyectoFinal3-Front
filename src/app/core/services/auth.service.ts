@@ -9,27 +9,25 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  voidUser: User = {
-    password: '',
-    token: '',
-    email: '',
-  };
-  private userSubject: BehaviorSubject<User> = new BehaviorSubject<User>(
-    this.voidUser
-  );
-  public user$: Observable<User> = this.userSubject.asObservable();
+  private userSubject: BehaviorSubject<User|null>;
+    public user$: Observable<User|null>
+
   constructor(
     private httpClient: HttpClient,
     private cookieService: CookieService,
     private router: Router
-  ) {}
+  ) {
+    this.userSubject = new BehaviorSubject<User|null>(this.getUser());
+    this.user$ = this.userSubject.asObservable();
+  }
 
   login(user: User): Observable<User> {
     return this.httpClient
       .post<User>(`${environment.apiUrlDev}/login`, user)
       .pipe(
         map((user) => {
-          this.userSubject.next(user);
+          this.setUser(user);
+          this.userSubject.next(user)
           return user;
         })
       );
@@ -41,14 +39,20 @@ export class AuthService {
     );
   }
   logout() {
+    this.userSubject.next(null)
     this.cookieService.delete('token');
-    this.userSubject.next(this.voidUser);
     this.router.navigate(['/login']);
   }
-  setToken(token: string) {
-    this.cookieService.set('user', token);
+  setUser(user: User) {
+    this.cookieService.set('user', JSON.stringify(user, null, 2), {
+      expires: 1,
+    });
   }
-  getToken() {
-    return this.cookieService.get('token');
+  getUser(): User | null {
+    const user = this.cookieService.get('user')
+    if(user){
+      return JSON.parse(user);
+    }return null
+    
   }
 }

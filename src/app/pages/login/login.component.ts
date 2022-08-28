@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
     }
     console.log(body);
     
-    /* this.authService.login(body).subscribe(res=>{
+    this.authService.login(body).subscribe(res=>{
       console.log(res);
       
-    }) */
+    })
   }
   goToRegister(){
     this.router.navigate(['/register'])
