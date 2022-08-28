@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  user!: any;
+  user!: User|null;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
@@ -16,7 +16,10 @@ export class DashboardComponent implements OnInit {
       if (res) {
         this.user = res;
         console.log(this.user);
+      }else{
+        this.user=null;
       }
+      
     });
    
   }

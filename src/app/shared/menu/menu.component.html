@@ -13,7 +13,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse d-flex justify-content-end">
-      <h2>Hola {{user?.name}} </h2>
+      <h2 *ngIf="user">Hola {{user.name}} </h2>
       <app-navbar [user]="user" ></app-navbar>
     </div>
   </div>

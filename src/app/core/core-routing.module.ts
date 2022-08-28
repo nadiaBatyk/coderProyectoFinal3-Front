@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
@@ -12,11 +13,19 @@ const routes: Routes = [
             path: 'login',
             loadChildren: () =>
               import('../pages/login/login.module').then((m) => m.LoginModule),
+              canActivate:[LoginGuard]
           },
           {
             path: 'register',
             loadChildren: () =>
               import('../pages/register/register.module').then((m) => m.RegisterModule),
+              canActivate:[LoginGuard]
+          },
+          {
+            path: 'welcome',
+            loadChildren: () =>
+              import('../pages/welcome/welcome.module').then((m) => m.WelcomeModule),
+              canActivate:[AuthGuard]
           },
           {
             path: 'account',

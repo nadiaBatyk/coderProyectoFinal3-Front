@@ -7,7 +7,7 @@ import { User } from 'src/app/core/models/user';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  @Input() user!:any;
+  @Input() user!:User|null;
   constructor() { }
 
   ngOnInit(): void {
