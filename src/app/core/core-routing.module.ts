@@ -25,19 +25,25 @@ const routes: Routes = [
             path: 'welcome',
             loadChildren: () =>
               import('../pages/welcome/welcome.module').then((m) => m.WelcomeModule),
-              canActivate:[AuthGuard]
+             // canActivate:[AuthGuard]
           },
           {
             path: 'account',
             loadChildren: () =>
               import('../pages/account/account.module').then((m) => m.AccountModule),
-              canActivate:[AuthGuard]
+             // canActivate:[AuthGuard]
           },
           {
             path: 'cart',
             loadChildren: () =>
               import('../pages/cart/cart.module').then((m) => m.CartModule),
-              canActivate:[AuthGuard]
+            //  canActivate:[AuthGuard]
+          },
+          {
+            path: 'products',
+            loadChildren: () =>
+              import('../pages/products/products.module').then((m) => m.ProductsModule),
+            //  canActivate:[AuthGuard]
           },
           {
             path: '',

@@ -1,1 +1,22 @@
-<p>welcome works!</p>
+<div class="container mt-5 w-50 bg-color p-5">
+  <h2 class="text-center">Hola {{ user?.name }}!</h2>
+  <p class="text-center">¿Qué te gustaría hacer hoy?</p>
+  <div class="list-group">
+    <a
+      routerLink="/products"
+      class="list-group-item list-group-item-action text-center"
+      aria-current="true"
+    >
+      Comprar productos
+    </a>
+    <a routerLink="/cart" class="list-group-item list-group-item-action text-center"
+      >Ver mi carrito</a
+    >
+    <a routerLink="/products" class="list-group-item list-group-item-action text-center"
+      >Ver mis pedidos</a
+    >
+    <a routerLink="/account" class="list-group-item list-group-item-action text-center"
+      >Ir a mi cuenta</a
+    >
+  </div>
+</div>
