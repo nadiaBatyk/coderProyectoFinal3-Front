@@ -32,7 +32,7 @@ export class AuthService {
         })
       );
   }
-  register(user: User): Observable<User> {
+  register(user:any): Observable<User> {
     return this.httpClient
       .post<User>(`${environment.apiUrlDev}/register`, user)
       .pipe(
