@@ -36,6 +36,12 @@ export class AuthService {
     return this.httpClient.post<User>(
       `${environment.apiUrlDev}/register`,
       user
+    ).pipe(
+      map((user) => {
+        this.setUser(user);
+        this.userSubject.next(user)
+        return user;
+      })
     );
   }
   logout() {
