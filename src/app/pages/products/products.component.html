@@ -1,1 +1,16 @@
-<p>products works!</p>
+<div class="bg-color p-5">
+  <h2 class="text-center">Todos los productos que podes comprar hoy!</h2>
+
+  <div>
+    <div *ngFor="let product of products" class="card card-w " >
+      <img src="{{product.image}}" class="card-img-top img-size p-3" alt="{{product.name}}" />
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-title">
+          Precio: {{product.price | currency: '$' }}
+        </p>
+        <a  class="btn btn-primary">Sumar al carrito</a>
+      </div>
+    </div>
+  </div>
+</div>
