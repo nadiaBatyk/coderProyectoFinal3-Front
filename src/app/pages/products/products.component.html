@@ -10,7 +10,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-title">Precio: {{ product.price | currency: "$" }}</p>
-        <a class="btn btn-primary">Sumar al carrito</a>
+        <a class="btn btn-primary" (click)="sumarAlCarrito(product)">Sumar al carrito</a>
       </div>
     </div>
   </div>

@@ -3,4 +3,7 @@ export interface User {
     password?:string,
     token?: string;
     name?:string,
+    phone?:string,
+    userImage?:string,
+    _id?:string
 }
