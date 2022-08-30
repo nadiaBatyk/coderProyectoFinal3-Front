@@ -1,6 +1,6 @@
 <div class="container mt-5 w-50 bg-color p-5">
-  <h2 class="text-center">Hola {{ user?.name }}!</h2>
-  <p class="text-center">¿Qué te gustaría hacer hoy?</p>
+  <h2 class="text-center fs-3">Hola {{ user?.name | titlecase}}!</h2>
+  <p class="text-center fs-4">¿Qué te gustaría hacer hoy?</p>
   <div class="list-group">
     <a
       routerLink="/products"

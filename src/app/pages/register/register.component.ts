@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+      phone:['',Validators.required]
     });
   }
   processFile(imageInput: any) {
